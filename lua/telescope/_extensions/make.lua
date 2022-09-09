@@ -31,9 +31,9 @@ end
 
 local function run_target(cmd)
 	local run_term = Terminal:new({
-		cmd = "make " .. cmd[1],
-		direction = "horizontal",
-		close_on_exit = false,
+		cmd = config.toggle_term.cmd .. " " .. cmd[1],
+		direction = config.toggle_term.direction,
+		close_on_exit = config.toggle_term.close_on_exit,
 	})
 
 	run_term:toggle()
